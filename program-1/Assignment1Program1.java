@@ -11,6 +11,7 @@ public class Assignment1Program1 {
   }
   public void fahrenToCelcius(double inputFahren){
     celciusConv = ((inputFahren - 32.0)/1.8);
+    //System.out.println(celciusConv.toString()); (Testing)
   }
   public static void main(String[] args){
     Assignment1Program1 apObjectOne = new Assignment1Program1();
@@ -28,6 +29,9 @@ public class Assignment1Program1 {
     String userString = scannerObject.nextLine();
     apObjectOne.reverseText(userString);
     System.out.println("[Please enter a number in Fahrenheit ]: ");
+    Double userFahren = scannerObject.nextDouble();
+    apObjectOne.fahrenToCelcius(userFahren);
+
 
 
 }
