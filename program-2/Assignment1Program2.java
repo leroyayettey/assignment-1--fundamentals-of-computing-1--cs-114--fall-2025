@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Assignment1Program2 {
   public int maxFourDigRep(int base){
     int maxInt;
@@ -7,19 +6,25 @@ public class Assignment1Program2 {
     return maxInt;
   }
 
-
+  public String baseConvert(int baseTenConvertNum){
+    int fourthDiv = baseTenConvertNum / 27;
+    int fourthRemain = fourthDiv % 3;
+    int firstDiv = baseTenConvertNum / 3;
+    int firstRemain = baseTenConvertNum % 3;
+    int secondDiv = firstDiv / 3;
+    int secondRemain = firstDiv % 3;
+    int thirdDiv = secondDiv / 3;
+    int thirdRemain = secondDiv % 3;
+    String fullConv = ("" + fourthRemain + thirdRemain + secondRemain + firstRemain);
+    return fullConv;
+  }
   public static void main(String[] args) {
     Assignment1Program2 a1p2Object = new Assignment1Program2();
     Scanner scannerTool = new Scanner(System.in);
     System.out.println("[ BASE CONVERSION PROGRAM ]\n[ Please enter a base (2 - 9) ]: ");
     int userChosenBase = scannerTool.nextInt();
-    System.out.println("[The maximum 4-digit base 10 number in base " + userChosenBase + " is [ " + a1p2Object.maxFourDigRep(userChosenBase) + " ].\n[ Enter a base 10 number in the range (0 to " + userChosenBase + ") to convert: ");
+    System.out.println("[The maximum 4-digit base 10 number in base " + userChosenBase + " is [ " + a1p2Object.maxFourDigRep(userChosenBase) + " ].\n[ Enter a base 10 number in the range (0 to " + a1p2Object.maxFourDigRep(userChosenBase) + ") to convert: ");
     int userBaseTen = scannerTool.nextInt();
-    System.out.println("");
-
-
-
-
-
+    System.out.println(userBaseTen + " [Base 10] = " + a1p2Object.baseConvert(userBaseTen) + " [Base 3]");
   }
 }
